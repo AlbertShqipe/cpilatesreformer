@@ -1,0 +1,26 @@
+.footer {
+  // background-color: $charcoal;
+  color: black;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-family: $font-primary;
+
+  &__container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  &__text {
+    font-size: 0.95rem;
+    margin: 0.4rem 0;
+
+    a {
+      color: $soft-green;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

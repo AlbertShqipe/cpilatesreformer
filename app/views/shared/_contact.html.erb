@@ -1,0 +1,35 @@
+<section class="contact" id="contact">
+  <div class="contact__container">
+    <h2 class="contact__title">Contactez Chiara</h2>
+
+    <div class="contact__content">
+      <div class="contact__form">
+        <%= form_with url: contact_path, method: :post, local: true do |f| %>
+          <div class="contact__field">
+            <%= f.label :name, 'Votre nom' %>
+            <%= f.text_field :name, required: true %>
+          </div>
+
+          <div class="contact__field">
+            <%= f.label :email, 'Votre email' %>
+            <%= f.email_field :email, required: true %>
+          </div>
+
+          <div class="contact__field">
+            <%= f.label :message, 'Votre message' %>
+            <%= f.text_area :message, rows: 5, required: true %>
+          </div>
+
+          <div class="contact__field">
+            <%= f.submit 'Envoyer', class: 'contact__btn' %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="contact__info">
+        <p><strong>Téléphone :</strong> <a href="tel:+33745147577">0745147577</a></p>
+        <p><strong>Email :</strong> <a href="mailto:chiara.paperini.pilates@gmail.com">chiara.paperini.pilates@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>

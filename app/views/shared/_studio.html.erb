@@ -1,0 +1,41 @@
+<section class="studio">
+  <h2 class="studio__title">Le Studio</h2>
+
+  <div class="swiper studio__carousel">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide studio__slide">
+        <img src="/assets/machines.jpeg" alt="Studio 1" />
+      </div>
+      <div class="swiper-slide studio__slide">
+        <img src="/assets/machines2.jpeg" alt="Studio 2" />
+      </div>
+      <div class="swiper-slide studio__slide">
+        <img src="/assets/machines-used.jpeg" alt="Cours en session" />
+      </div>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- Pagination dots -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  new Swiper('.swiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+});
+</script>
