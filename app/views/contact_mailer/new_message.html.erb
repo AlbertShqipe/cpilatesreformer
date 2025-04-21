@@ -1,3 +1,19 @@
-<%= @name %>
-<%= @message %>
-<%= @email %>
+<table style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+  <tr>
+    <td>
+      <h2 style="color: #4c6b48; margin-bottom: 1.5rem;">📩 Nouveau message via le formulaire du site</h2>
+
+      <p><strong>Nom :</strong> <%= @name %></p>
+      <p><strong>Email :</strong> <a href="mailto:<%= @email %>" style="color: #4c6b48;"><%= @email %></a></p>
+
+      <hr style="margin: 1.5rem 0;" />
+
+      <p><strong>Message :</strong></p>
+      <p style="white-space: pre-line; background: #f1f1f1; padding: 1rem; border-radius: 6px;"><%= @message %></p>
+
+      <hr style="margin: 2rem 0;" />
+
+      <p style="font-size: 0.9rem; color: #999;">Ce message vous a été envoyé via le site de Chiara Paperini Pilates.</p>
+    </td>
+  </tr>
+</table>
