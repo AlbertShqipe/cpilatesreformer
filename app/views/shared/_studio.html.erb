@@ -1,27 +1,40 @@
-<section class="studio">
-  <h2 class="studio__title">Le Studio</h2>
-
-  <div data-controller="swiper" class="swiper studio__carousel">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide studio__slide">
-        <%= image_tag "machines.jpeg", alt:"Studio 1" %>
-      </div>
-      <div class="swiper-slide studio__slide">
-        <%= image_tag "machines2.jpeg", alt:"Studio 2" %>
-      </div>
-      <div class="swiper-slide studio__slide">
-        <%= image_tag "machines-used.jpeg", alt:"Cours en session" %>
-      </div>
+<section class="studio" id="studio">
+  <div class="studio__container">
+    <h2 class="studio__title">CPilates Reformer</h2>
+    <p class="studio__subtitle">Votre studio de Pilates Reformer proche de Lyon</p>
+    <div class="studio__intro">
+      <p>
+        Situé à Sainte-Foy-lès-Lyon, à quelques minutes du centre de Lyon, le studio CPilates Reformer vous accueille dans un espace lumineux, calme et bienveillant, pensé pour vous offrir une expérience unique de remise en forme et de bien-être.
+      </p>
+      <h3 class="studio__section-title">Une approche du mouvement inspirée par la danse</h3>
+      <p>
+        Chiara Paperini, fondatrice du studio, est une ancienne danseuse professionnelle de l’Opéra de Lyon et du Béjart Ballet Lausanne. Forte de plus de 15 ans d’expérience dans le mouvement, elle propose une approche du Pilates Reformer précise, fluide et accessible à tous.
+      </p>
+      <p>
+        Chaque séance est adaptée à vos besoins : que vous soyez débutant, sportif, en recherche de renforcement musculaire ou de détente posturale, vous serez accompagné avec attention et expertise.
+      </p>
     </div>
 
-    <!-- Navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <!-- Swiper Carousel -->
+    <div data-controller="swiper" class="swiper studio__carousel">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide studio__slide">
+          <%= image_tag "machines.jpeg", alt: "Studio 1" %>
+        </div>
+        <div class="swiper-slide studio__slide">
+          <%= image_tag "machines2.jpeg", alt: "Studio 2" %>
+        </div>
+        <div class="swiper-slide studio__slide">
+          <%= image_tag "machines-used.jpeg", alt: "Cours en session" %>
+        </div>
+      </div>
 
-    <!-- Pagination dots -->
-    <div class="swiper-pagination"></div>
+      <!-- Navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- Pagination dots -->
+      <div class="swiper-pagination"></div>
+    </div>
   </div>
 </section>
-<script>
-
-</script>

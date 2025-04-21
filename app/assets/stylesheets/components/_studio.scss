@@ -1,12 +1,66 @@
 .studio {
-  // padding: 4rem 2rem;
+  padding: 4rem 2rem;
   text-align: center;
+
+  &__container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+  }
 
   &__title {
     font-family: $font-accent;
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
     color: $charcoal;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    color: darken($charcoal, 10%);
+    margin-bottom: 2rem;
+    font-family: $font-primary;
+  }
+
+  &__intro {
+    font-family: $font-primary;
+    font-size: 1.1rem;
+    color: $charcoal;
+    line-height: 1.7;
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__section-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: $font-accent;
+    margin: 2rem 0 1rem;
+    color: $charcoal;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #647e68;
+    width: 30px;
+    height: 30px;
+
+    &:after {
+      font-size: 20px;
+
+      @media (max-width: 768px) {
+        font-size: 16px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  // Pagination dots
+  .swiper-pagination-bullet-active {
+    background-color: $soft-green;
   }
 
   .studio__carousel {
@@ -28,38 +82,13 @@
     }
   }
 
-  // Swiper navigation arrows
-  .swiper-button-prev,
-  .swiper-button-next {
-    color:#647e68;
-    width: 50px;
-    height: 50px;
-    z-index: 10;
-
-    &:after {
-      font-size: 40px;
-    }
-  }
-
-  // Pagination dots
   .swiper-pagination-bullet-active {
     background-color: $soft-green;
   }
 
-  // 📱 Responsive adjustments
   @media (max-width: 768px) {
     .swiper-slide img {
       height: 400px;
-    }
-
-    .swiper-button-prev,
-    .swiper-button-next {
-      width: 30px;
-      height: 30px;
-
-      &:after {
-        font-size: 24px;
-      }
     }
   }
 }
