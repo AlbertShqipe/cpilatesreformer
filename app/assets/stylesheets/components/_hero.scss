@@ -1,13 +1,19 @@
 .hero {
-  background: url('machines-used.jpeg') center/cover no-repeat;
-  height: 100dvh;
+  // background: url('machines-used.jpeg') center/cover no-repeat;
+  background: url('https://manager.samadhi-lyon.fr/storage/01JAJ0NPFJZM7HE1JCVM3XM0NQ.png') center/cover no-repeat;
+  height: 50dvh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 768px) {
+    height: 100dvh;
+
+  }
+
   &__overlay {
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.5);
     padding: 2rem;
     text-align: center;
     max-width: 90%;

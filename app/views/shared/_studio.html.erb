@@ -1,7 +1,7 @@
-<section class="studio">
+<section class="studio container">
   <h2 class="studio__title">Le Studio</h2>
 
-  <div class="swiper studio__carousel">
+  <div data-controller="swiper" class="swiper studio__carousel">
     <div class="swiper-wrapper">
       <div class="swiper-slide studio__slide">
         <%= image_tag "machines.jpeg", alt:"Studio 1" %>
@@ -23,19 +23,5 @@
   </div>
 </section>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-  new Swiper('.swiper', {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 10,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    }
-  });
-});
+
 </script>
