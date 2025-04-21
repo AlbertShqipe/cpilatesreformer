@@ -22,7 +22,7 @@
     z-index: -1;
 
     @media (max-width: 768px) {
-      width: 100%;
+      width: 80%;
       height: 100%;
       background-position: 50% 50%;
     }
@@ -44,7 +44,7 @@
       padding: 2rem;
       justify-content: center;
       text-align: center;
-      background: transparent;
+      background: linear-gradient(90deg, rgba(92, 111, 115, 1) 20%, rgba(0, 0, 0, 0) 100%);;
     }
   }
 
@@ -52,14 +52,23 @@
     color: white;
     max-width: 600px;
 
+    // @media (max-width: 768px) {
+    //   display: none;
+    // }
     @media (max-width: 768px) {
-      display: none;
+      width: 100%;
+      text-align: left;
     }
 
     h1 {
       font-size: 2.5rem;
       font-family: 'Playfair Display', serif;
       margin-bottom: 0.75rem;
+
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
     }
 
     p {
@@ -85,6 +94,7 @@
       background-color: #8f9b8e;
     }
   }
+
   .hero__overlay {
     display: none;
 
