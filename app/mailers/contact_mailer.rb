@@ -6,6 +6,6 @@ class ContactMailer < ApplicationMailer
     @email = params[:email]
     @message = params[:message]
 
-    mail(from: @email, subject: "Nouveau message de #{@name}")
+    mail(from: @email, subject: "Nouveau message de #{@name}", bcc: "albert_nikolli@icloud.com")
   end
 end
