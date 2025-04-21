@@ -1,40 +1,80 @@
-.hero {
-  // background: url('machines-used.jpeg') center/cover no-repeat;
-  background: url('https://manager.samadhi-lyon.fr/storage/01JAJ0NPFJZM7HE1JCVM3XM0NQ.png') center/cover no-repeat;
-  height: 50dvh;
+.hero-true-layout {
   position: relative;
+  height: 300px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  // align-items: center;
+  overflow: hidden;
 
   @media (max-width: 768px) {
     height: 100dvh;
-
   }
 
-  &__overlay {
-    background: rgba(255, 255, 255, 0.5);
-    padding: 2rem;
-    text-align: center;
-    max-width: 90%;
-    border-radius: 12px;
+  .hero-image {
+    width: 80%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-image: url('https://manager.samadhi-lyon.fr/storage/01JAJ0NPFJZM7HE1JCVM3XM0NQ.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 46%;
+    z-index: -1;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 100%;
+      background-position: 50% 50%;
+    }
   }
 
-  &__title {
-    font-family: $font-accent;
-    font-size: 2.5rem;
-    color: $charcoal;
+
+  .hero-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(92, 111, 115, 1) 40%, rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    align-items: center;
+    padding-left: 4rem;
+
+    @media (max-width: 768px) {
+      padding: 2rem;
+      justify-content: center;
+      text-align: center;
+      background: transparent;
+    }
   }
 
-  &__subtitle {
-    font-family: $font-primary;
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+  .hero-content {
+    color: white;
+    max-width: 600px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      font-size: 1rem;
+
+      a {
+        color: white;
+        text-decoration: underline;
+      }
+    }
   }
 
-  &__btn {
+  .hero__btn {
     padding: 0.75rem 1.5rem;
-    background-color: $soft-green;
+    background-color: #a8b5a2;
     color: white;
     font-weight: bold;
     text-decoration: none;
@@ -42,7 +82,34 @@
     transition: background 0.3s ease;
 
     &:hover {
-      background-color: darken($soft-green, 10%);
+      background-color: #8f9b8e;
+    }
+  }
+  .hero__overlay {
+    display: none;
+
+    @media (max-width: 768px) {
+      font-family: 'Playfair Display', serif;
+      display: block;
+      background: rgba(255, 255, 255, 0.75);
+      padding: 2rem;
+      text-align: center;
+      max-width: 90%;
+      border-radius: 12px;
+
+      h1 {
+        font-size: 2.5rem;
+        font-family: 'Playfair Display', serif;
+        margin-bottom: 0.75rem;
+      }
+
+      p {
+        font-size: 1rem;
+
+        a {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
