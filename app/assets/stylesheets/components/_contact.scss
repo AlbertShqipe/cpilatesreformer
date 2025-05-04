@@ -17,9 +17,8 @@
 
   &__content {
     display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
     justify-content: space-between;
+    flex-direction: column;
   }
 
   &__form {
@@ -64,10 +63,12 @@
   }
 
   &__info {
-    flex: 1 1 250px;
+    flex: 1 1 100px;
     font-family: $font-primary;
     font-size: 1.1rem;
     color: $charcoal;
+    display: flex;
+    justify-content: space-around;
 
     a {
       color: $charcoal;
@@ -75,6 +76,31 @@
 
       &:hover {
         text-decoration: underline;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      width: 24px;
+      height: 24px;
+      margin: 0 1rem;
+
+      svg {
+        width: 24px;
+        height: 24px;
+        fill: $charcoal;
+        transition: fill 0.3s ease;
+
+        &:hover {
+          cursor: pointer;
+          fill: $soft-green;
+        }
       }
     }
   }
