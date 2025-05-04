@@ -70,6 +70,10 @@
     display: flex;
     justify-content: space-around;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
     a {
       color: $charcoal;
       text-decoration: none;
