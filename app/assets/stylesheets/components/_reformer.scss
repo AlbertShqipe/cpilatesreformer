@@ -1,0 +1,89 @@
+.reformer {
+  padding: 4rem 2rem 0 2rem;
+  text-align: center;
+  margin-top: 50px;
+
+  &__container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  &__title {
+    font-family: $font-accent;
+    font-size: 2.5rem;
+    color: $charcoal;
+    margin-bottom: 1.5rem;
+  }
+
+  &__lead {
+    font-family: $font-primary;
+    font-size: 1.2rem;
+    color: darken($charcoal, 10%);
+    margin-bottom: 3rem;
+    line-height: 1.7;
+  }
+
+  &__section {
+    margin-bottom: 2rem;
+
+    h3 {
+      font-family: $font-accent;
+      font-size: 1.4rem;
+      color: $charcoal;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-family: $font-primary;
+      font-size: 1.05rem;
+      color: $charcoal;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__benefits {
+    ul {
+      padding-left: 1.2rem;
+      list-style: disc;
+      margin-bottom: 1.5rem;
+
+      li {
+        font-family: $font-primary;
+        font-size: 1rem;
+        color: $charcoal;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    p {
+      font-family: $font-primary;
+      font-size: 1rem;
+      color: $charcoal;
+      line-height: 1.6;
+    }
+  }
+
+  .reformer__image {
+    text-align: center;
+    margin: auto 2rem;
+
+    img {
+      max-width: 600px;
+      height: auto;
+      border-radius: 8px;
+
+      @media (max-width: 768px) {
+        max-width: 100%;
+      }
+    }
+
+    &__caption {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: darken($charcoal, 20%);
+      font-family: $font-primary;
+    }
+  }
+}

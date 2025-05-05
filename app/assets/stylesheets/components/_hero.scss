@@ -1,22 +1,22 @@
 .hero {
-  // background: url('chiara.jpeg') center/cover no-repeat;
-  background: url('https://manager.samadhi-lyon.fr/storage/01JAJ0NPFJZM7HE1JCVM3XM0NQ.png') center/cover no-repeat;
-  height: 50dvh;
+  background: url('chiara.jpeg') center/cover no-repeat;
+  height: 60dvh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 70px;
 
   @media (max-width: 768px) {
+    background: url('https://manager.samadhi-lyon.fr/storage/01JAJ0NPFJZM7HE1JCVM3XM0NQ.png') center/cover no-repeat;
     height: 100dvh;
   }
 
   &__overlay {
-    background: rgba(25, 29, 58, 0.75);
+    background: rgba(25, 29, 58, 0.632);
     padding: 2rem;
     width: 100%;
     height: 100%;
-    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: start;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100" lang="en">
   <head>
-    <title>Cpilatesreformer</title>
+    <title>CPilates Reformer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -18,14 +18,32 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <!--  Browser Tab Appearance  -->
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#191d3a">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#191d3a">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#191d3a">
 
+    <style>
+      body,html {
+        height: 100%;
+        margin: 0;
+        background-color:rgb(241, 241, 241);
+      }
+    </style>
   </head>
 
-  <body class="m-auto">
-    <%= render "shared/navbar" unless current_page?("/") %>
+  <body class="d-flex flex-column h-100">
+  <%= render "shared/navbar" unless current_page?("/") %>
+
+  <main class="flex-shrink-0">
     <div class="container">
-      <%= yield  %>
+      <%= yield %>
     </div>
-    <%= render "shared/footer" unless current_page?("/") %>
+  </main>
+
+  <%= render "shared/footer" unless current_page?("/") %>
   </body>
 </html>

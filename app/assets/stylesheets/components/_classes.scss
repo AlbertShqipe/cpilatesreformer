@@ -1,6 +1,7 @@
 .classes {
-  background-color: $off-white;
+  background-color:rgb(241, 241, 241);
   padding: 4rem 2rem;
+  margin-top: 50px;
 
   &__container {
     max-width: 1200px;
@@ -23,7 +24,7 @@
   }
 
   &__card {
-    background-color: white;
+    background-color:rgb(241, 241, 241);
     flex: 1 1 300px;
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
@@ -53,6 +54,18 @@
   &__card-note {
     font-size: 0.9rem;
     font-style: italic;
-    color: darken($soft-green, 25%);
+    color: #4c36a9;
+
+    a {
+      color: #4c36a9;
+      text-decoration: underline;
+      font-weight: 500;
+      transition: color 0.3s ease-in;
+      transition: decoration 0.3s ease-in;
+
+      &:hover {
+        color: darken(#3670a9, 10%);
+      }
+    }
   }
 }
