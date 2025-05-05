@@ -1,0 +1,36 @@
+.burger {
+  width: 30px;
+  height: 25px;
+  margin: 0 15px;
+  display: none;
+  z-index: 1051; // stays above navbar
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+}
+
+.line {
+  height: 3px;
+  width: 100%;
+  background-color: $charcoal;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.burger.active .line1 {
+  background-color: rgb(241, 241, 241);
+  transform: rotate(45deg) translateY(15px);
+}
+
+.burger.active .line2 {
+  opacity: 0;
+}
+
+.burger.active .line3 {
+  background-color: rgb(241, 241, 241);
+  transform: rotate(-45deg) translateY(-15px);
+}
