@@ -7,6 +7,10 @@ export default class extends Controller {
   connect() {
     this.toggleShadow = this.toggleShadow.bind(this)
     window.addEventListener("scroll", this.toggleShadow)
+
+    // Ensure the burger and menu are reset when the page loads
+    this.burgerTarget.classList.remove("active")
+    this.menuTarget.classList.remove("open")
   }
 
   disconnect() {
@@ -24,5 +28,10 @@ export default class extends Controller {
   toggle() {
     this.burgerTarget.classList.toggle("active")
     this.menuTarget.classList.toggle("open") // Bootstrap uses 'show' to toggle collapse
+  }
+
+  close() {
+    this.burgerTarget.classList.remove("active")
+    this.menuTarget.classList.remove("open")
   }
 }

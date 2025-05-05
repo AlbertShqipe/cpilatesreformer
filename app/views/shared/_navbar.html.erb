@@ -3,6 +3,7 @@
     <a href="/test">
       <%= image_tag 'logo.svg', width:"75px" %>
     </a>
+
     <ul class="navbar-nav d-flex align-items-center flex-row">
       <a class="navbar-menu-item p-3 bg-transparent w-lg-auto fs-14 d-inline-flex flex-column align-items-center text-decoration-none shadow-none text-black border-0" href="/pilates_reformer">
         <li class="dropdown position-inherit">
@@ -25,6 +26,7 @@
         </li>
       </a>
     </ul>
+
     <div class="burger" data-action="click->navbar#toggle" data-navbar-target="burger">
       <span class="line line1"></span>
       <span class="line line2"></span>
@@ -33,21 +35,13 @@
 
     <div class="slideshow" data-navbar-target="menu">
       <!-- nav links -->
-        <a class="logo" href="/">
-          <%= image_tag 'logo-blue.png', width:"100px" %>
+        <a href="/test" data-action="click->navbar#close">
+          <%= image_tag 'logo-blue.png', width: "100px" %>
         </a>
-        <a href="/pilates_reformer">
-            CPilates Reformer
-        </a>
-        <a href="/about">
-            Notre Équipe
-        </a>
-        <a href="/classes">
-            Nos Cours
-        </a>
-        <a  href="/contacts">
-          Nous Contacter
-        </a>
+        <a href="/pilates_reformer" data-action="click->navbar#close">CPilates Reformer</a>
+        <a href="/about" data-action="click->navbar#close">Notre Équipe</a>
+        <a href="/classes" data-action="click->navbar#close">Nos Cours</a>
+        <a href="/contacts" data-action="click->navbar#close">Nous Contacter</a>
         <div class="rights">
           <div>
             <p>&copy; <%= Time.current.year %> Chiara Paperini – Pilates Reformer</p>
