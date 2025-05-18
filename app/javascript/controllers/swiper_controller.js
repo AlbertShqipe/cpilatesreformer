@@ -28,7 +28,7 @@ export default class extends Controller {
     }
 
     var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
+      spaceBetween: 10,
       centeredSlides: true,
       autoplay: {
         delay: 6000, // 6 seconds delay
