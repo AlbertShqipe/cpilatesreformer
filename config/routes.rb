@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root to: "pages#home"
   get '/test', to: 'pages#test'
-  get '/about', to: 'pages#about'
-  get '/contacts', to: 'pages#contact'
-  get '/classes', to: 'pages#classes'
+  get '/notre_equipe', to: 'pages#notre_equipe'
+  get '/nous_contacter', to: 'pages#nous_contacter'
+  get '/nos_cours', to: 'pages#nos_cours'
   get '/pilates_reformer', to: 'pages#pilates_reformer'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

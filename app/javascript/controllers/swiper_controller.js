@@ -10,6 +10,10 @@ export default class extends Controller {
         loop: true,
         slidesPerView: 1,
         spaceBetween: 10,
+        autoplay: {
+          delay: 3000, // 3 seconds delay
+          disableOnInteraction: false,
+        },
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'

@@ -18,9 +18,9 @@ class PagesController < ApplicationController
   end
   def about
   end
-  def contact
+  def nous_contacter
   end
-  def classes
+  def nos_cours
     @reviews = [
       { author: 'Emilie Passot', rating: 5, text: "Les cours de Pilates Reformer de Chiara sont excellents. Sa bienveillance, son attention du détail et ses explications m’ont permis de progresser. Chaque séance est complète et le temps passe en un éclair, mais on en ressent pas moins les effets après. Je recommande vivement pour ceux qui souhaitent progresser dans un cadre à la fois plaisant et motivant !" },
       { author: 'anne charra', rating: 5, text: "Je pratique le Pilates Reformer depuis septembre. Je suis ravie de mon expérience et du professionnalisme de Chiara. La salle est agréable et intimiste, avec seulement trois machines, ce qui permet des cours bien encadrés. L’ambiance est conviviale, et les séances sont à la fois structurées et efficaces. Une excellente adresse pour progresser en toute confiance !" },

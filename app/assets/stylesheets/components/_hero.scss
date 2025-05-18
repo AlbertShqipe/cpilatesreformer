@@ -44,7 +44,8 @@
 
   &__btn {
     padding: 0.9rem 1.65rem;
-    background-color: rgba(75, 54, 169, 0.9);
+    // background-color: rgba(75, 54, 169, 0.9);
+    background-color: lab(74.16% -10.44 -12.1);
     color: rgb(255, 255, 255);
     text-decoration: none;
     border-radius: 6px;
@@ -60,7 +61,7 @@
 
     &:hover {
       // background-color: darken(#ffa60b, 10%);
-      background-color: darken(#4c36a9, 10%);
+      background-color: darken(#93bdcc, 10%);
 
       // font-variation-settings: "wght" 650 !important;
     }

@@ -13,13 +13,17 @@
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
     color: $charcoal;
+    text-align: center;
   }
 
   &__subtitle {
     font-size: 1.2rem;
     color: darken($charcoal, 10%);
     margin-bottom: 2rem;
-    font-family: $font-primary;
+    font-family: $font-accent;
+    font-weight: 400;
+    text-align: center;
+
   }
 
   &__intro {
@@ -43,7 +47,7 @@
 
   .swiper-button-prev,
   .swiper-button-next {
-    color: #4c36a9;
+    color: #93bdcc;
     width: 30px;
     height: 30px;
 
@@ -60,7 +64,7 @@
 
   // Pagination dots
   .swiper-pagination-bullet-active {
-    background-color: #4c36a9;
+    background-color: #93bdcc;
   }
 
   .studio__carousel {
@@ -83,7 +87,7 @@
   }
 
   .swiper-pagination-bullet-active {
-    background-color: #4c36a9;
+    background-color: #93bdcc;
   }
 
   @media (max-width: 768px) {

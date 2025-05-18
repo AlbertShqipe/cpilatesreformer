@@ -1,5 +1,5 @@
 .classes {
-  background-color:rgb(241, 241, 241);
+  background-color: rgb(241, 241, 241);
   padding: 4rem 2rem;
   margin-top: 50px;
 
@@ -24,10 +24,10 @@
   }
 
   &__card {
-    background-color:rgb(241, 241, 241);
+    background-color: rgb(241, 241, 241);
     flex: 1 1 300px;
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 16px #93bdcc;
     padding: 2rem;
     transition: transform 0.2s ease;
 
@@ -54,10 +54,10 @@
   &__card-note {
     font-size: 0.9rem;
     font-style: italic;
-    color: #4c36a9;
+    color: #93bdcc;
 
     a {
-      color: #4c36a9;
+      color: #93bdcc;
       text-decoration: underline;
       font-weight: 500;
       transition: color 0.3s ease-in;
@@ -66,6 +66,31 @@
       &:hover {
         color: darken(#3670a9, 10%);
       }
+    }
+  }
+
+  &__btn {
+    padding: 0.8rem 1.55rem;
+    // background-color: rgba(75, 54, 169, 0.9);
+    background-color: #93bdcc;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+    font-size: 1.5rem;
+    font-family: $font-accent;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      margin-top: 1rem;
+    }
+
+    &:hover {
+      // background-color: darken(#ffa60b, 10%);
+      background-color: darken(#93bdcc, 10%);
+
+      // font-variation-settings: "wght" 650 !important;
     }
   }
 }
