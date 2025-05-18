@@ -38,38 +38,17 @@
 
     <script>
       function initMap() {
-        const cpilates = { lat: 45.73276559876481, lng: 4.803268671164351 };
-        const mapElement = document.getElementById('map');
-        if (!mapElement) return;
-
-        const map = new google.maps.Map(mapElement, {
+        let cpreformer = {lat: 45.73276559876481, lng: 4.803268671164351};
+        let map = new google.maps.Map(
+          document.getElementById('map'), {
           zoom: 18,
-          center: cpilates,
+          center: cpreformer
         });
-
-        const marker = new google.maps.marker.AdvancedMarkerElement({
-          map,
-          position: cpilates,
-          title: "Cpilates Reformer"
-        });
-
-        const infoWindow = new google.maps.InfoWindow({
-          content: '<div style="text-align: center;"><h2>Cpilates Reformer</h2><p>📍 4 Rue de la République, 69001 Lyon</p></div>',
-        });
-
-        marker.addListener("click", () => {
-          infoWindow.open(map, marker);
+        let marker = new google.maps.Marker({
+          position: cpreformer,
+          map: map
         });
       }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const script = document.createElement("script");
-        script.src = "https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&libraries=maps,marker&v=beta";
-        script.async = true;
-        script.defer = true;
-        script.onload = initMap;
-        document.body.appendChild(script);
-      });
     </script>
   </head>
 
@@ -83,5 +62,6 @@
     </main>
 
     <%= render "shared/footer" unless current_page?("/") %>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API_KEY']%>&callback=initMap" ></script>
   </body>
 </html>
