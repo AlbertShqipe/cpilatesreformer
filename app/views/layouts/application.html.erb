@@ -24,7 +24,7 @@
     <meta name="msapplication-navbutton-color" content="#191d3a">
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#191d3a">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#191d3a">
     <meta name="theme-color" content="#191d3a">
 
@@ -35,17 +35,53 @@
         background-color:rgb(241, 241, 241);
       }
     </style>
+
+    <script>
+      function initMap() {
+        const cpilates = { lat: 45.73276559876481, lng: 4.803268671164351 };
+        const mapElement = document.getElementById('map');
+        if (!mapElement) return;
+
+        const map = new google.maps.Map(mapElement, {
+          zoom: 18,
+          center: cpilates,
+        });
+
+        const marker = new google.maps.marker.AdvancedMarkerElement({
+          map,
+          position: cpilates,
+          title: "Cpilates Reformer"
+        });
+
+        const infoWindow = new google.maps.InfoWindow({
+          content: '<div style="text-align: center;"><h2>Cpilates Reformer</h2><p>📍 4 Rue de la République, 69001 Lyon</p></div>',
+        });
+
+        marker.addListener("click", () => {
+          infoWindow.open(map, marker);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const script = document.createElement("script");
+        script.src = "https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&libraries=maps,marker&v=beta";
+        script.async = true;
+        script.defer = true;
+        script.onload = initMap;
+        document.body.appendChild(script);
+      });
+    </script>
   </head>
 
   <body class="d-flex flex-column h-100">
-  <%= render "shared/navbar" unless current_page?("/") %>
+    <%= render "shared/navbar" unless current_page?("/") %>
 
-  <main class="flex-shrink-0">
-    <div class="container">
-      <%= yield %>
-    </div>
-  </main>
+    <main class="flex-shrink-0">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
 
-  <%= render "shared/footer" unless current_page?("/") %>
+    <%= render "shared/footer" unless current_page?("/") %>
   </body>
 </html>
