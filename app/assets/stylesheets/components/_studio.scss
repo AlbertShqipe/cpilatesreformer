@@ -94,5 +94,10 @@
     .swiper-slide img {
       height: 400px;
     }
+
+    .swiper-slide img.left {
+      object-position: 30% center; /* shifts focal point left (showing more right of image) */
+    }
+
   }
 }
