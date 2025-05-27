@@ -9,6 +9,41 @@
     text-align: left;
   }
 
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  &__card {
+    background-color: rgb(241, 241, 241);
+    flex: 1 1 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px #93bdcc;
+    padding: 2rem;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__card-title {
+    font-family: $font-accent;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: $charcoal;
+  }
+
+  &__card-text {
+    font-family: $font-primary;
+    font-size: 1rem;
+    color: $charcoal;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
   &__title {
     font-family: $font-accent;
     font-size: 2.5rem;

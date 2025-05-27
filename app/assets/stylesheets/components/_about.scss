@@ -10,7 +10,6 @@
     height: auto;
   }
 
-
   &__container {
     display: flex;
     flex-wrap: wrap;
@@ -94,13 +93,12 @@
         height: auto;
         max-height: 100px;
         object-fit: contain;
-        filter: grayscale(100%);
-        transition: filter 0.3s ease, transform 0.3s ease;
+        transform: scale(1);
+        transition: transform 0.3s ease;
       }
 
       &:hover img {
         cursor: pointer;
-        filter: grayscale(0%);
         transform: scale(1.05);
       }
     }
