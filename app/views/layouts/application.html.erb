@@ -38,24 +38,24 @@
 
     <script>
       function initMap() {
-      const mapDiv = document.getElementById('map');
-      if (!mapDiv) {
-        console.error("Map container with id 'map' not found.");
-        return;
+        const mapDiv = document.getElementById('map');
+        if (!mapDiv) {
+          console.warn("No #map container found — skipping Google Maps init.");
+          return;
+        }
+
+        const cpreformer = { lat: 45.73276559876481, lng: 4.803268671164351 };
+
+        const map = new google.maps.Map(mapDiv, {
+          zoom: 18,
+          center: cpreformer
+        });
+
+        new google.maps.Marker({
+          position: cpreformer,
+          map: map
+        });
       }
-
-      const cpreformer = { lat: 45.73276559876481, lng: 4.803268671164351 };
-
-      const map = new google.maps.Map(mapDiv, {
-        zoom: 18,
-        center: cpreformer
-      });
-
-      new google.maps.Marker({
-        position: cpreformer,
-        map: map
-      });
-    }
     </script>
   </head>
 
