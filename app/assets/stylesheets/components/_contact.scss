@@ -10,10 +10,11 @@
 
   &__title {
     text-align: center;
-    font-family: $font-accent;
-    font-size: 2rem;
-    margin-bottom: 2.5rem;
-    color: $charcoal;
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   &__content {
