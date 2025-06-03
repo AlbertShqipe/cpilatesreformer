@@ -60,7 +60,10 @@
   </head>
 
   <body class="d-flex flex-column h-100">
-    <%= render "shared/navbar" unless current_page?("/") %>
+    <div id="splash-screen" class="splash-screen" data-controller="splash">
+      <%= image_tag 'logo.svg', width: "50%" %>
+    </div>
+    <%= render "shared/navbar" %>
 
     <main class="flex-shrink-0">
       <div class="container">
@@ -68,7 +71,7 @@
       </div>
     </main>
 
-    <%= render "shared/footer" unless current_page?("/") %>
+    <%= render "shared/footer" %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}&callback=initMap&loading=async", async: true, defer: true, data: { turbo_track: "reload" } %>
   </body>
 </html>
