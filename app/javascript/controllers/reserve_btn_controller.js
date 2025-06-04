@@ -39,9 +39,9 @@ export default class extends Controller {
     // 📱 MOBILE logic
     if (isHomePage && heroTarget) {
       setTimeout(() => {
+        // === Show/hide logic for reserveBtnMobile ===
         const mobileObserver = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
-            // ✅ Show when hero is NOT visible
             reserveBtnMobile?.classList.toggle("d-none", entry.isIntersecting);
           });
         }, {
@@ -51,6 +51,23 @@ export default class extends Controller {
         });
 
         mobileObserver.observe(heroTarget);
+
+        // === Adjust position near footer ===
+        const footer = document.querySelector("footer");
+
+        if (footer && reserveBtnMobile) {
+          const footerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              reserveBtnMobile.style.bottom = entry.isIntersecting ? "117px" : "20px";
+            });
+          }, {
+            root: null,
+            threshold: 0
+          });
+
+          footerObserver.observe(footer);
+        }
+
       }, 100);
     } else {
       reserveBtnMobile?.classList.remove("d-none");
