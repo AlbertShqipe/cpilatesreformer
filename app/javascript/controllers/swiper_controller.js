@@ -4,44 +4,52 @@ import { Controller } from "@hotwired/stimulus"
 // If using Swiper from CDN (like you are), it's globally available as `Swiper`
 export default class extends Controller {
   connect() {
-    // Only initialize if element exists
-    if (typeof Swiper !== "undefined") {
+    if (typeof Swiper === "undefined") {
+      console.warn("Swiper is not loaded.");
+      return;
+    }
+
+    // Check if it's a studio carousel or a review carousel
+    if (this.element.classList.contains("studio__carousel")) {
       new Swiper(this.element, {
         loop: true,
         slidesPerView: 1,
         spaceBetween: 10,
         autoplay: {
-          delay: 3000, // 3 seconds delay
+          delay: 3000,
           disableOnInteraction: false,
         },
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
+          nextEl: this.element.querySelector(".swiper-button-next"),
+          prevEl: this.element.querySelector(".swiper-button-prev")
         },
         pagination: {
-          el: '.swiper-pagination',
-          clickable: true
+          el: this.element.querySelector(".swiper-pagination"),
+          clickable: true,
         }
       });
-    } else {
-      console.warn("Swiper is not loaded.");
     }
 
-    var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 10,
-      centeredSlides: true,
-      autoplay: {
-        delay: 6000, // 6 seconds delay
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+    if (this.element.classList.contains("review__carousel")) {
+      new Swiper(this.element, {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loopAdditionalSlides: 0,
+        centeredSlides: true,
+        autoplay: {
+          delay: 6000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: this.element.querySelector(".swiper-pagination"),
+          clickable: true,
+        },
+        navigation: {
+          nextEl: this.element.querySelector(".swiper-button-next"),
+          prevEl: this.element.querySelector(".swiper-button-prev")
+        }
+      });
+    }
   }
 }
