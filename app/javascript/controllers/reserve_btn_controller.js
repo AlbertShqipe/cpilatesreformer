@@ -51,26 +51,25 @@ export default class extends Controller {
         });
 
         mobileObserver.observe(heroTarget);
-
-        // === Adjust position near footer ===
-        const footer = document.querySelector("footer");
-
-        if (footer && reserveBtnMobile) {
-          const footerObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              reserveBtnMobile.style.bottom = entry.isIntersecting ? "117px" : "20px";
-            });
-          }, {
-            root: null,
-            threshold: 0
-          });
-
-          footerObserver.observe(footer);
-        }
-
       }, 100);
     } else {
       reserveBtnMobile?.classList.remove("d-none");
+    }
+
+    // === Adjust position near footer ===
+    const footer = document.querySelector("footer");
+
+    if (footer && reserveBtnMobile) {
+      const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          reserveBtnMobile.style.bottom = entry.isIntersecting ? "117px" : "20px";
+        });
+      }, {
+        root: null,
+        threshold: 0
+      });
+
+      footerObserver.observe(footer);
     }
 
     if (isMobile) {
