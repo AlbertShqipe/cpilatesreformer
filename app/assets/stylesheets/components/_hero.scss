@@ -28,11 +28,23 @@
     }
   }
 
+  &__text{
+    position: absolute;
+    bottom: 100px;
+
+    @media (max-width: 768px) {
+      position: relative;
+      bottom: 0;
+
+
+    }
+  }
+
   &__title {
     font-family: $font-accent;
     font-size: 3rem;
     color: white;
-    // margin-bottom: 1rem;
+    // margin-top: 2rem;
   }
 
   &__subtitle {

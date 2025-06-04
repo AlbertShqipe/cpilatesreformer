@@ -5,11 +5,18 @@
     </a>
 
     <ul class="navbar-nav d-flex align-items-center flex-row">
+      <a class="navbar-menu-item p-3 bg-transparent w-lg-auto fs-14 d-inline-flex flex-column align-items-center text-decoration-none shadow-none text-black border-0" href="/">
+        <li class="dropdown position-inherit">
+          Accueil
+        </li>
+      </a>
+
       <a class="navbar-menu-item p-3 bg-transparent w-lg-auto fs-14 d-inline-flex flex-column align-items-center text-decoration-none shadow-none text-black border-0" href="/pilates_reformer">
         <li class="dropdown position-inherit">
           CPilates Reformer
         </li>
       </a>
+
       <a class="navbar-menu-item p-3 bg-transparent w-lg-auto fs-14 d-inline-flex flex-column align-items-center text-decoration-none shadow-none text-black border-0" href="/notre_equipe">
         <li class="dropdown position-inherit">
           Notre Équipe
@@ -35,9 +42,10 @@
 
     <div class="slideshow" data-navbar-target="menu">
       <!-- nav links -->
-        <a href="/test" data-action="click->navbar#close">
+        <a href="/" data-action="click->navbar#close">
           <%= image_tag 'logo-blue.png', width: "100px" %>
         </a>
+        <a href="/">Accueil</a>
         <a href="/pilates_reformer" data-action="click->navbar#close">CPilates Reformer</a>
         <a href="/notre_equipe" data-action="click->navbar#close">Notre Équipe</a>
         <a href="/nos_cours" data-action="click->navbar#close">Nos Cours</a>
