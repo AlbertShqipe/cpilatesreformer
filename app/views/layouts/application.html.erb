@@ -59,7 +59,7 @@
     </script>
   </head>
 
-  <body class="d-flex flex-column h-100">
+  <body class="d-flex flex-column h-100" data-controller="reserve-btn">
     <div id="splash-screen" class="splash-screen" data-controller="splash">
       <%= image_tag 'logo.svg', width: "50%" %>
     </div>
@@ -68,6 +68,7 @@
     <main class="flex-shrink-0">
       <div class="container">
         <%= yield %>
+        <a href="https://samadhi-lyon.fr/pilates" id="reserve_btn_mobile">&#10003;</a>
       </div>
     </main>
 
