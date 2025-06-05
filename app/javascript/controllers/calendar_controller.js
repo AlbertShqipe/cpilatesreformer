@@ -5,37 +5,51 @@ export default class extends Controller {
   static targets = ["popup", "popupText"]
 
   connect() {
-    var calendarEl = document.getElementById('calendar');
+    const calendarEl = document.getElementById('calendar');
     if (!calendarEl) return;
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+      locale: 'fr',
       initialView: window.innerWidth < 768 ? 'listWeek' : 'dayGridMonth',
+      buttonText: {
+        today: 'Aujourd’hui',
+        month: 'Mois',
+        week: 'Semaine',
+        day: 'Jour',
+        list: 'Liste'
+      },
+
+      // ✅ Optional: Make title look like "Juin 2025"
+      titleFormat: { year: 'numeric', month: 'long' },
+
+      // ✅ Capitalize weekday headers like "Lundi"
+      dayHeaderFormat: { weekday: 'long' },
+
       events: this.classSchedule(),
       eventTimeFormat: {
         hour: '2-digit',
         minute: '2-digit',
         hour12: false
       },
-      // headerToolbar: {
-      //   left: '',
-      //   center: 'title', // center title only
-      //   right: ''
-      // },
-      // titleFormat: { text: 'Cours Collectifs' },
+
       eventClick: function(info) {
         const overlay = document.getElementById('calendar-popup-overlay');
         const popupText = document.getElementById('popup-text');
 
         const date = info.event.start.toLocaleDateString('fr-FR');
         const time = info.event.start.toTimeString().substring(0, 5);
+        const teacher = info.event.extendedProps.teacher || 'Professeur';
+        const image = info.event.extendedProps.image || 'default.jpg';
         const title = 'Cours collectif';
         const link = `https://samadhi-lyon.fr/pilates#calendar`;
 
         popupText.innerHTML = `
-          <div class="text-center">
-            <strong>${title}</strong><br>
-            📅 ${date}<br>
-            🕒 ${time}<br><br>
+          <div class="text-center" style="margin: auto; padding: 20px; background: rgb(241, 241, 241); border-radius: 12px;">
+            <strong>${title}</strong><br><br>
+            <img src="/assets/${image}" alt="${teacher}" class="teacher-img"><br>
+            ${teacher}<br>
+            ${date}<br>
+            ${time}<br><br>
             <a href="${link}" class="btn-reserve">Réserver</a>
           </div>
         `;
@@ -46,54 +60,59 @@ export default class extends Controller {
 
     calendar.render();
 
+    // Close popup on outside click
     this.handleOutsideClick = this._handleOutsideClick.bind(this);
     document.addEventListener('click', this.handleOutsideClick);
   }
 
   classSchedule() {
     const weekly = [
-      // Monday
-      { daysOfWeek: [1], time: '09:00' },
-      { daysOfWeek: [1], time: '10:00' },
-      { daysOfWeek: [1], time: '12:30' },
-      { daysOfWeek: [1], time: '18:30' },
-      { daysOfWeek: [1], time: '19:30' },
+      // Monday (Lundi)
+      { daysOfWeek: [1], time: '09:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg' },
+      { daysOfWeek: [1], time: '10:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [1], time: '12:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [1], time: '18:30', teacher: 'Oksana Boiko', image: 'oksana-5c2d3e3d3e3ae70863c45898958cf5586815fa525a330d9023c9eb42e9687168.png' },
+      { daysOfWeek: [1], time: '19:30', teacher: 'Oksana Boiko', image: 'oksana-5c2d3e3d3e3ae70863c45898958cf5586815fa525a330d9023c9eb42e9687168.png' },
 
-      // Tuesday
-      { daysOfWeek: [2], time: '09:00' },
-      { daysOfWeek: [2], time: '14:00' },
-      { daysOfWeek: [2], time: '17:30' },
-      { daysOfWeek: [2], time: '18:30' },
-      { daysOfWeek: [2], time: '19:30' },
+      // Tuesday (Mardi)
+      { daysOfWeek: [2], time: '09:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [2], time: '14:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [2], time: '17:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [2], time: '18:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [2], time: '19:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
 
-      // Wednesday
-      { daysOfWeek: [3], time: '17:30' },
-      { daysOfWeek: [3], time: '18:30' },
-      { daysOfWeek: [3], time: '19:30' },
+      // Wednesday (Mercredi)
+      { daysOfWeek: [3], time: '17:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [3], time: '18:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [3], time: '19:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
 
-      // Thursday
-      { daysOfWeek: [4], time: '09:00' },
-      { daysOfWeek: [4], time: '10:00' },
-      { daysOfWeek: [4], time: '12:30' },
-      { daysOfWeek: [4], time: '18:30' },
-      { daysOfWeek: [4], time: '19:30' },
+      // Thursday (Jeudi)
+      { daysOfWeek: [4], time: '09:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [4], time: '10:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [4], time: '12:30', teacher: 'Oksana Boiko', image: 'oksana-5c2d3e3d3e3ae70863c45898958cf5586815fa525a330d9023c9eb42e9687168.png'  },
+      { daysOfWeek: [4], time: '18:30', teacher: 'Astrid Colomb-Bouvard', image: 'astrid-cb7d91b0a4e4eea2801a453d9caf5b3f900f4626bc07490dc76f76b3be0aa969.png' },
+      { daysOfWeek: [4], time: '19:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
 
-      // Friday
-      { daysOfWeek: [5], time: '09:00' },
-      { daysOfWeek: [5], time: '12:30' },
+      // Friday (Vendredi)
+      { daysOfWeek: [5], time: '09:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [5], time: '12:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
 
-      // Saturday
-      { daysOfWeek: [6], time: '10:00' },
-      { daysOfWeek: [6], time: '11:15' },
+      // Saturday (Samedi)
+      { daysOfWeek: [6], time: '10:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [6], time: '11:15', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
     ];
 
     return weekly.map((item, index) => ({
       id: index,
-      title: '',
+      title: `${item.teacher}`,
       daysOfWeek: item.daysOfWeek,
       startTime: item.time,
       endTime: this.addMinutes(item.time, 55),
-      startRecur: new Date().toISOString().split('T')[0]
+      startRecur: new Date().toISOString().split('T')[0],
+      extendedProps: {
+        teacher: item.teacher,
+        image: item.image
+      }
     }));
   }
 

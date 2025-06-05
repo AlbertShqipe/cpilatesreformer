@@ -1,12 +1,25 @@
 #calendar {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   max-height: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color:rgb(241, 241, 241);
+  background-color: rgb(241, 241, 241);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.teacher-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.fc .fc-col-header-cell-cushion,
+.fc .fc-toolbar-title {
+  text-transform: capitalize;
 }
 
 .calendar-title {
@@ -40,7 +53,7 @@
 }
 
 .fc-daygrid-day-frame {
-  aspect-ratio: 1 / 1.5; // Make cells square
+  // aspect-ratio: 1 / 1.5; // Make cells square
 
 
   &:hover {
@@ -48,20 +61,16 @@
   }
 }
 
-.fc .fc-daygrid-event {
-  font-size: 0.75rem;       /* make text smaller */
-  line-height: 1.2;
-  padding: 4px 6px; /* reduce padding */
-}
+// .fc .fc-daygrid-event {
+//   font-size: 0.75rem;       /* make text smaller */
+//   line-height: 1.2;
+//   padding: 4px 6px; /* reduce padding */
+// }
 
 .fc-col-header-cell-cushion {
   color: inherit !important; /* use default text color */
   text-decoration: none !important; /* remove underline */
 }
-// .fc .fc-daygrid-event-dot {
-//   height: 1px;
-//   width: 1px;
-// }
 
 .popup-overlay {
   position: fixed;
@@ -82,13 +91,13 @@
 
 .calendar-popup {
   width: 90%;
-  max-width: 500px;
-  max-height: 800px;
+  max-width: 400px;
+  height: auto;
   position: fixed;
-  top: 20%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -20%);
-  background-color:rgb(241, 241, 241);
+  transform: translate(-50%, -50%);
+  background-color: transparent;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -110,14 +119,40 @@
 .calendar-popup .popup-content {
   position: relative;
   text-align: center;
+
 }
 
 #popup-close {
   position: absolute !important;
-  top: 0;
-  right: 8px;
+  top: -5px;
+  right: 10px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 30px;
+  color: rgba(147, 189, 204, 0.7);
+
+  &:hover {
+    color: darken(#93bdcc, 10%);;
+  }
+}
+
+.fc-daygrid-day-events {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+  padding-bottom: 4px;
+}
+
+.fc .fc-daygrid-event {
+  // display: block;
+  white-space: normal;
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+  padding: 2px 4px;
+  border-radius: 4px;
+  background-color: #f3f3f3;
+  color: #333;
+  border: none;
 }
 
 .btn-reserve {
@@ -172,8 +207,9 @@
 
   .calendar-popup {
     width: 90%;
-    top: 15%;
-    transform: translate(-50%, -15%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 16px;
     font-size: 0.9rem;
   }
