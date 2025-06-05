@@ -1,12 +1,17 @@
 #reserve_btn_desktop {
   padding: 0.5rem 1.25rem;
-  background-color: #93bdcc;
+  background-color: rgba(147, 189, 204, 0.7);
   color: rgb(255, 255, 255);
   text-decoration: none;
   border-radius: 6px;
   transition: background 0.3s ease;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-family: $font-accent;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transition: bottom 0.3s ease;
+
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
