@@ -82,13 +82,13 @@
 
 .calendar-popup {
   width: 90%;
-  max-width: 800px;
+  max-width: 500px;
   max-height: 800px;
   position: fixed;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -20%);
-  background: white;
+  background-color:rgb(241, 241, 241);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
