@@ -6,45 +6,48 @@ export default class extends Controller {
 
   connect() {
     var calendarEl = document.getElementById('calendar');
-      if (!calendarEl) return;
+    if (!calendarEl) return;
 
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        events: this.classSchedule(),
-        eventTimeFormat: {
-          hour: '2-digit',
-          minute: '2-digit',
-          hour12: false
-        },
-        // headerToolbar: {
-        //   left: '',
-        //   center: 'title', // center title only
-        //   right: ''
-        // },
-        // titleFormat: { text: 'Cours Collectifs' },
-        eventClick: function(info) {
-          const popup = document.getElementById('calendar-popup');
-          const popupText = document.getElementById('popup-text');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: window.innerWidth < 768 ? 'listWeek' : 'dayGridMonth',
+      events: this.classSchedule(),
+      eventTimeFormat: {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      },
+      // headerToolbar: {
+      //   left: '',
+      //   center: 'title', // center title only
+      //   right: ''
+      // },
+      // titleFormat: { text: 'Cours Collectifs' },
+      eventClick: function(info) {
+        const overlay = document.getElementById('calendar-popup-overlay');
+        const popupText = document.getElementById('popup-text');
 
-          const date = info.event.start.toLocaleDateString('fr-FR');
-          const time = info.event.start.toTimeString().substring(0, 5);
-          const title = info.event.title;
-          const link = `https://samadhi-lyon.fr/pilates#calendar`; // customize as needed
+        const date = info.event.start.toLocaleDateString('fr-FR');
+        const time = info.event.start.toTimeString().substring(0, 5);
+        const title = 'Cours collectif';
+        const link = `https://samadhi-lyon.fr/pilates#calendar`;
 
-          popupText.innerHTML = `
-          <div class="text-ceter">
+        popupText.innerHTML = `
+          <div class="text-center">
             <strong>${title}</strong><br>
             📅 ${date}<br>
             🕒 ${time}<br><br>
             <a href="${link}" class="btn-reserve">Réserver</a>
           </div>
-          `;
+        `;
 
-          popup.classList.remove('hidden');
-        }
-      });
+        overlay.classList.remove('hidden');
+      }
+    });
 
-      calendar.render();
+    calendar.render();
+
+    this.handleOutsideClick = this._handleOutsideClick.bind(this);
+    document.addEventListener('click', this.handleOutsideClick);
   }
 
   classSchedule() {
@@ -103,6 +106,25 @@ export default class extends Controller {
   }
 
   closePopup() {
-    this.popupTarget.classList.add('hidden');
+    const overlay = document.getElementById('calendar-popup-overlay');
+    if (overlay) overlay.classList.add('hidden');
+  }
+
+  disconnect() {
+    document.removeEventListener('click', this.handleOutsideClick);
+  }
+
+  _handleOutsideClick(event) {
+    const overlay = document.getElementById('calendar-popup-overlay');
+    const popup = document.getElementById('calendar-popup');
+
+    if (!overlay || overlay.classList.contains('hidden')) return;
+
+    const isClickInsidePopup = popup.contains(event.target);
+    const isCalendarClick = event.target.closest('.fc') !== null;
+
+    if (!isClickInsidePopup && !isCalendarClick) {
+      overlay.classList.add('hidden');
+    }
   }
 }

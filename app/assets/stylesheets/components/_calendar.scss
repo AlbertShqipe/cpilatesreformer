@@ -40,7 +40,8 @@
 }
 
 .fc-daygrid-day-frame {
-  width: calc(100% - 2px); /* account for border */
+  aspect-ratio: 1 / 1.5; // Make cells square
+
 
   &:hover {
     background-color: rgba(147, 189, 204, 0.1);
@@ -62,8 +63,27 @@
 //   width: 1px;
 // }
 
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  z-index: 9998;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-overlay.hidden {
+  display: none;
+}
+
 .calendar-popup {
-  width: 300px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 800px;
   position: fixed;
   top: 20%;
   left: 50%;
@@ -112,5 +132,63 @@
 
   &:hover {
     background-color: darken(#93bdcc, 10%);
+  }
+}
+
+@media (max-width: 768px) {
+  #calendar {
+    padding: 10px;
+    max-width: 100%;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  .fc-toolbar-chunk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .fc-list-day-text, .fc-list-day-side-text {
+    text-decoration: none !important; /* remove underline */
+    color: inherit !important;        /* use default text color */
+    font-size: 0.8rem;
+  }
+
+  .calendar-title {
+    font-size: 1.2rem;
+    margin: 20px auto 10px;
+  }
+
+  .fc-event {
+    font-size: 0.65rem;
+    padding: 2px 4px;
+  }
+
+  .fc .fc-daygrid-event {
+    font-size: 0.65rem;
+    padding: 2px 4px;
+  }
+
+  .calendar-popup {
+    width: 90%;
+    top: 15%;
+    transform: translate(-50%, -15%);
+    padding: 16px;
+    font-size: 0.9rem;
+  }
+
+  .btn-reserve {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #popup-close {
+    font-size: 18px;
+    right: 10px;
+    top: 4px;
   }
 }

@@ -32,10 +32,12 @@
   <h2 class="calendar-title">Cours Collectifs</h2>
   <div data-controller="calendar">
     <div id="calendar"></div>
-    <div data-calendar-target="popup" id="calendar-popup" class="calendar-popup hidden">
-        <span data-action="click->calendar#closePopup" style="cursor:pointer;">&times;</span>
-      <div class="popup-content">
-        <div data-calendar-target="popupText" id="popup-text"></div>
+    <div id="calendar-popup-overlay" class="popup-overlay hidden">
+      <div id="calendar-popup" class="calendar-popup">
+        <div class="popup-content">
+          <span id="popup-close" data-action="click->calendar#closePopup" style="cursor:pointer;">&times;</span>
+          <div id="popup-text"></div>
+        </div>
       </div>
     </div>
   </div>
