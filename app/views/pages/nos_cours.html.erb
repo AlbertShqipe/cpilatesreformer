@@ -29,8 +29,17 @@
 
     </div>
   </div>
+  <h2 class="calendar-title">Cours Collectifs</h2>
+  <div data-controller="calendar">
+    <div id="calendar"></div>
+    <div data-calendar-target="popup" id="calendar-popup" class="calendar-popup hidden">
+        <span data-action="click->calendar#closePopup" style="cursor:pointer;">&times;</span>
+      <div class="popup-content">
+        <div data-calendar-target="popupText" id="popup-text"></div>
+      </div>
+    </div>
+  </div>
   <div class="text-center mt-5">
     <a href="/nous_contacter" class="classes__btn">Nous Contacter</a>
   </div>
 </section>
-<%= render "shared/reviews" %>
