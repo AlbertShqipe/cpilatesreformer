@@ -6,40 +6,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap" rel="stylesheet">
 
+    <!-- Meta: SEO & Social -->
     <meta name="google-site-verification" content="-EqTQ9kuhwRRraVYdyzkZQvuPOzvkqhCUz7CNNrw_Q4" />
-
-    <%# favicon %>
-    <%= favicon_link_tag 'apple-touch-icon.png' %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-
-    <!-- Swiper CSS -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-
-    <!-- FullCalendar CSS -->
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js' defer></script>
-
-    <!--  Browser Tab Appearance Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#93bdcc">
-
-    <!-- Windows Phone -->
     <meta name="msapplication-navbutton-color" content="#191d3a">
-    <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#93bdcc">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#93bdcc">
-    <meta name="theme-color" content="#191d3a">
-
-    <!-- Meta tags -->
     <meta name="description" content="CPilates Reformer - Pilates Reformer à Lyon, France. Découvrez l'équilibre, le mouvement et le bien-être avec nos cours de Pilates Reformer. Réservez dès maintenant !">
     <meta name="keywords" content="Pilates, Reformer, Lyon, France, bien-être, équilibre, mouvement, cours de Pilates, réservation de cours">
     <meta name="author" content="Chiara Paperini">
@@ -53,38 +30,66 @@
     <meta name="twitter:description" content="Découvrez l'équilibre, le mouvement et le bien-être avec nos cours de Pilates Reformer. Réservez dès maintenant !">
     <meta name="twitter:image" content="<%= asset_path('logo.svg') %>">
 
+    <!-- Favicon -->
+    <%= favicon_link_tag 'apple-touch-icon.png' %>
+
+    <!-- App CSS -->
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <!-- Swiper CSS (only preload if actually used above the fold) -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+
+    <!-- App JS via Importmap -->
+    <%= javascript_importmap_tags %>
+
+    <!-- Swiper JS: load only if used -->
+    <% if content_for?(:uses_swiper) %>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <% end %>
+
+    <!-- FullCalendar JS: load only if used -->
+    <% if content_for?(:uses_calendar) %>
+      <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js" defer></script>
+    <% end %>
+
+    <!-- Google Maps JS: load only if used -->
+    <% if content_for?(:uses_map) %>
+      <script>
+        function initMap() {
+          const mapDiv = document.getElementById('map');
+          if (!mapDiv) {
+            console.warn("No #map container found — skipping Google Maps init.");
+            return;
+          }
+
+          const cpreformer = { lat: 45.73276559876481, lng: 4.803268671164351 };
+
+          const map = new google.maps.Map(mapDiv, {
+            zoom: 18,
+            center: cpreformer
+          });
+
+          new google.maps.Marker({
+            position: cpreformer,
+            map: map
+          });
+        }
+
+      </script>
+    <% end %>
+
     <style>
-      body,html {
+      body, html {
         height: 100%;
         margin: 0;
-        background-color:rgb(241, 241, 241);
+        background-color: rgb(241, 241, 241);
       }
     </style>
 
-    <script>
-      function initMap() {
-        const mapDiv = document.getElementById('map');
-        if (!mapDiv) {
-          console.warn("No #map container found — skipping Google Maps init.");
-          return;
-        }
+    <%# Optional: preload above-the-fold images %>
+    <%= tag.link rel: "preload", as: "image", href: image_path("chiara.jpeg") %>
 
-        const cpreformer = { lat: 45.73276559876481, lng: 4.803268671164351 };
-
-        const map = new google.maps.Map(mapDiv, {
-          zoom: 18,
-          center: cpreformer
-        });
-
-        new google.maps.Marker({
-          position: cpreformer,
-          map: map
-        });
-      }
-
-
-
-    </script>
   </head>
 
   <body class="d-flex flex-column h-100" data-controller="reserve-btn">
