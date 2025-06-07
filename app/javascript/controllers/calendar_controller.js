@@ -40,6 +40,7 @@ export default class extends Controller {
         const time = info.event.start.toTimeString().substring(0, 5);
         const teacher = info.event.extendedProps.teacher || 'Professeur';
         const image = info.event.extendedProps.image || 'default.jpg';
+        const level = info.event.extendedProps.level;
         const title = 'Cours collectif';
         const link = `https://samadhi-lyon.fr/pilates#calendar`;
 
@@ -68,43 +69,43 @@ export default class extends Controller {
   classSchedule() {
     const weekly = [
       // Monday (Lundi)
-      { daysOfWeek: [1], time: '09:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg' },
-      { daysOfWeek: [1], time: '10:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
-      { daysOfWeek: [1], time: '12:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
-      { daysOfWeek: [1], time: '18:30', teacher: 'Oksana Boiko', image: 'oksana-5c2d3e3d3e3ae70863c45898958cf5586815fa525a330d9023c9eb42e9687168.png' },
-      { daysOfWeek: [1], time: '19:30', teacher: 'Oksana Boiko', image: 'oksana-5c2d3e3d3e3ae70863c45898958cf5586815fa525a330d9023c9eb42e9687168.png' },
+      { daysOfWeek: [1], time: '09:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Intermédiaire'  },
+      { daysOfWeek: [1], time: '10:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Normal'  },
+      { daysOfWeek: [1], time: '12:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Normal'  },
+      { daysOfWeek: [1], time: '18:30', teacher: 'Oksana Boiko', image: 'oksana-5c2d3e3d3e3ae70863c45898958cf5586815fa525a330d9023c9eb42e9687168.png', level: 'Normal' },
+      { daysOfWeek: [1], time: '19:30', teacher: 'Oksana Boiko', image: 'oksana-5c2d3e3d3e3ae70863c45898958cf5586815fa525a330d9023c9eb42e9687168.png', level: 'Normal' },
 
       // Tuesday (Mardi)
-      { daysOfWeek: [2], time: '09:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
-      { daysOfWeek: [2], time: '14:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
-      { daysOfWeek: [2], time: '17:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
-      { daysOfWeek: [2], time: '18:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
-      { daysOfWeek: [2], time: '19:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [2], time: '09:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Normal'  },
+      { daysOfWeek: [2], time: '14:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Normal'  },
+      { daysOfWeek: [2], time: '17:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Normal'  },
+      { daysOfWeek: [2], time: '18:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Normal'  },
+      { daysOfWeek: [2], time: '19:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Intermédiaire'   },
 
       // Wednesday (Mercredi)
-      { daysOfWeek: [3], time: '17:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
-      { daysOfWeek: [3], time: '18:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
-      { daysOfWeek: [3], time: '19:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [3], time: '17:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Normal'  },
+      { daysOfWeek: [3], time: '18:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Normal'  },
+      { daysOfWeek: [3], time: '19:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Intermédiaire'   },
 
       // Thursday (Jeudi)
-      { daysOfWeek: [4], time: '09:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
-      { daysOfWeek: [4], time: '10:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
-      { daysOfWeek: [4], time: '12:30', teacher: 'Oksana Boiko', image: 'oksana-5c2d3e3d3e3ae70863c45898958cf5586815fa525a330d9023c9eb42e9687168.png'  },
-      { daysOfWeek: [4], time: '18:30', teacher: 'Astrid Colomb-Bouvard', image: 'astrid-cb7d91b0a4e4eea2801a453d9caf5b3f900f4626bc07490dc76f76b3be0aa969.png' },
-      { daysOfWeek: [4], time: '19:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [4], time: '09:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Intermédiaire'   },
+      { daysOfWeek: [4], time: '10:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Normal'  },
+      { daysOfWeek: [4], time: '12:30', teacher: 'Oksana Boiko', image: 'oksana-5c2d3e3d3e3ae70863c45898958cf5586815fa525a330d9023c9eb42e9687168.png', level: 'Intermédiaire'   },
+      { daysOfWeek: [4], time: '18:30', teacher: 'Astrid Colomb-Bouvard', image: 'astrid-cb7d91b0a4e4eea2801a453d9caf5b3f900f4626bc07490dc76f76b3be0aa969.png', level: 'Normal' },
+      { daysOfWeek: [4], time: '19:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Normal'  },
 
       // Friday (Vendredi)
-      { daysOfWeek: [5], time: '09:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
-      { daysOfWeek: [5], time: '12:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [5], time: '09:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Normal'  },
+      { daysOfWeek: [5], time: '12:30', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Normal'  },
 
       // Saturday (Samedi)
-      { daysOfWeek: [6], time: '10:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
-      { daysOfWeek: [6], time: '11:15', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg'  },
+      { daysOfWeek: [6], time: '10:00', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Normal'  },
+      { daysOfWeek: [6], time: '11:15', teacher: 'Chiara Paperini', image: 'chiara_profile-c37f375bedd3fbd7ca2d40b163dc7c993a3096b5bfa5652f7ab9c50c258a4c2b.jpeg', level: 'Intermédiaire'   },
     ];
 
     return weekly.map((item, index) => ({
       id: index,
-      title: `${item.teacher}`,
+      title: `${item.level}`,
       daysOfWeek: item.daysOfWeek,
       startTime: item.time,
       endTime: this.addMinutes(item.time, 55),
