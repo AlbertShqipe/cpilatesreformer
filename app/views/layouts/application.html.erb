@@ -6,6 +6,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <meta name="google-site-verification" content="-EqTQ9kuhwRRraVYdyzkZQvuPOzvkqhCUz7CNNrw_Q4" />
 
     <%# favicon %>
@@ -15,16 +18,18 @@
     <%= javascript_importmap_tags %>
 
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
 
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
     <!-- FullCalendar CSS -->
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js' defer></script>
 
     <!--  Browser Tab Appearance Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#93bdcc">
+
     <!-- Windows Phone -->
     <meta name="msapplication-navbutton-color" content="#191d3a">
     <!-- iOS Safari -->
