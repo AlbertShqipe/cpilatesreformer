@@ -44,9 +44,7 @@
     <%= javascript_importmap_tags %>
 
     <!-- Swiper JS: load only if used -->
-    <% if content_for?(:uses_swiper) %>
       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-    <% end %>
 
     <!-- FullCalendar JS: load only if used -->
     <% if content_for?(:uses_calendar) %>
