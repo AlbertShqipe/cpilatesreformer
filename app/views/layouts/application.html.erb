@@ -33,6 +33,20 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#93bdcc">
     <meta name="theme-color" content="#191d3a">
 
+    <!-- Meta tags -->
+    <meta name="description" content="CPilates Reformer - Pilates Reformer à Lyon, France. Découvrez l'équilibre, le mouvement et le bien-être avec nos cours de Pilates Reformer. Réservez dès maintenant !">
+    <meta name="keywords" content="Pilates, Reformer, Lyon, France, bien-être, équilibre, mouvement, cours de Pilates, réservation de cours">
+    <meta name="author" content="Chiara Paperini">
+    <meta property="og:title" content="CPilates Reformer - Pilates Reformer à Lyon, France">
+    <meta property="og:description" content="Découvrez l'équilibre, le mouvement et le bien-être avec nos cours de Pilates Reformer. Réservez dès maintenant !">
+    <meta property="og:image" content="<%= asset_path('logo.svg') %>">
+    <meta property="og:url" content="https://samadhi-lyon.fr/pilates">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CPilates Reformer - Pilates Reformer à Lyon, France">
+    <meta name="twitter:description" content="Découvrez l'équilibre, le mouvement et le bien-être avec nos cours de Pilates Reformer. Réservez dès maintenant !">
+    <meta name="twitter:image" content="<%= asset_path('logo.svg') %>">
+
     <style>
       body,html {
         height: 100%;
@@ -69,7 +83,7 @@
 
   <body class="d-flex flex-column h-100" data-controller="reserve-btn">
     <div id="splash-screen" class="splash-screen" data-controller="splash">
-      <%= image_tag 'logo.svg', width: "50%" %>
+      <%= image_tag 'logo.svg', width: "50%", alt:"logo CPilates" %>
     </div>
     <%= render "shared/navbar" %>
 
@@ -77,7 +91,7 @@
       <div class="container">
         <%= yield %>
         <a href="https://samadhi-lyon.fr/pilates#calendar" id="reserve_btn_mobile">
-          <%= image_tag 'calendar.png', width:"30px" %>
+          <%= image_tag 'calendar.png', width:"30px", alt:"Calendar Icon" %>
         </a>
         <a href="https://samadhi-lyon.fr/pilates#calendar" id="reserve_btn_desktop">
           Réserver <br>un cours
