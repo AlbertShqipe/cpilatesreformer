@@ -15,6 +15,7 @@ module Cpilatesreformer
       generate.test_framework :test_unit, fixture: false
     end
 
+    config.middleware.use Rack::Deflater
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
