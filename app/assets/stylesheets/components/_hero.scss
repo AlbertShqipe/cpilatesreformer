@@ -1,5 +1,4 @@
 .hero {
-  background: url('chiara.jpeg') center/cover no-repeat;
   height: 60dvh;
   position: relative;
   display: flex;
@@ -8,11 +7,26 @@
   margin-top: 70px;
 
   @media (max-width: 768px) {
-    background: url('https://manager.samadhi-lyon.fr/storage/01JAJ0NPFJZM7HE1JCVM3XM0NQ.png') center/cover no-repeat;
     height: 100dvh;
   }
 
+  &__bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    object-fit: cover;         // 🔁 zooms and covers like background-size: cover
+    object-position: center;
+  }
+
+
   &__overlay {
+    position: absolute; // <-- KEY fix
+    top: 0;
+    left: 0;
+    z-index: 1; // <-- above the image
     background: rgba(25, 29, 58, 0.632);
     padding: 2rem;
     width: 100%;
@@ -28,12 +42,12 @@
     }
   }
 
-  &__text{
-    position: absolute;
-    bottom: 10%;
+  &__text {
+    position: relative; // <-- safer than absolute in this context now
+    z-index: 2; // <-- above the overlay just in case
+    bottom: -20%;
 
     @media (max-width: 768px) {
-      position: relative;
       bottom: 0;
     }
   }

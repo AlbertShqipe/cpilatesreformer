@@ -1,4 +1,15 @@
 <section class="hero">
+  <picture>
+  <!-- Mobile image: shown when max-width is 768px -->
+  <source media="(max-width: 768px)" srcset="https://manager.samadhi-lyon.fr/storage/01JAJ0NPFJZM7HE1JCVM3XM0NQ.png">
+
+  <!-- Default (desktop) image -->
+  <%= image_tag "chiara.jpeg",
+        alt: "Pilates en mouvement",
+        class: "hero__bg",
+        loading: "eager",
+        fetchpriority: "high" %>
+</picture>
   <div class="hero__overlay">
     <div class="hero__text">
       <h1 class="hero__title">Équilibre. Mouvement. Bien-être.</h1>
