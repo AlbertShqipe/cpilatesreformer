@@ -6,7 +6,7 @@
   height: 100%;
   // background-color: #191d3a;
   background-color: #93bdcc;
-  color: rgb(255, 255, 255);
+  color: #333;
   overflow: hidden;
   transition: width 0.3s ease-in-out;
   z-index: 100;
@@ -23,7 +23,7 @@
     text-decoration: none;
     font-size: 18px;
     opacity: 0; /* Initially hidden */
-    color: #ffffff;
+    color: #333;
     transition: opacity 0.3s ease-in-out 0.2s; /* Delay fade-in */
     font-family: $font-accent;
 
@@ -39,10 +39,10 @@
     left: 50%;
     transform: translateX(-50%);
     font-size: 12px;
-    color: #ffffff;
+    color: #333;
 
     a {
-      color: #ffffff;
+      color: #333;
       text-decoration: none;
       font-size: 12px;
     }
