@@ -4,7 +4,7 @@
     <h2 class="studio__title">CPilates Reformer</h2>
     <p class="studio__subtitle">Votre studio de Pilates Reformer proche de Lyon</p>
     <div class="studio__intro">
-      <p>
+      <p class="text-center">
         Situé à <a href='https://maps.app.goo.gl/aaxSrP93hHDKZGDc9'>Sainte-Foy-lès-Lyon</a>, à quelques minutes du centre de Lyon, le studio CPilates Reformer vous accueille dans un espace lumineux, calme et bienveillant, pensé pour vous offrir une expérience unique de remise en forme et de bien-être.
       </p>
       <h3 class="studio__section-title">Une approche du mouvement inspirée par la danse</h3>
@@ -16,20 +16,45 @@
       </p>
     </div>
 
+    <div class="target__container">
+      <h3 class="target__title">À qui s’adresse les cours de Pilates Reformer ?</h3>
+      <div class="target__circles">
+        <div class="target__item">
+          <div class="target__circle" style="background-color: #005EB4;"></div>
+          <p class="target__label">Je veux retrouver une belle posture et plus d'énergie.</p>
+        </div>
+        <div class="target__item">
+          <div class="target__circle" style="background-color: #1F91FA;"></div>
+          <p class="target__label">Je veux retrouver équilibre et vitalité.</p>
+        </div>
+        <div class="target__item">
+          <div class="target__circle" style="background-color: #6CB8FF;"></div>
+          <p class="target__label">Je veux prendre du temps pour moi.</p>
+        </div>
+        <div class="target__item">
+          <div class="target__circle" style="background-color: #A6CEF4;"></div>
+          <p class="target__label">Je veux me reconnecter à mon corps.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Swiper Carousel -->
     <div data-controller="swiper" class="swiper studio__carousel">
       <div class="swiper-wrapper">
         <div class="swiper-slide studio__slide">
-          <%= image_tag "machines.webp", alt: "Studio 1", loading: "lazy"  %>
+          <%= image_tag "machines-used.webp", alt: "Cours avec les Machines Reformer - Chiara Paperini - Pilates Reformer", loading: "lazy"  %>
         </div>
         <div class="swiper-slide studio__slide">
-          <%= image_tag "machines2.webp", alt: "Studio 2", loading: "lazy"  %>
+          <%= image_tag "c-pilates-reformer-lyon-sainte-foy-les-lyon.jpeg", alt: "Studio avec les Machines Reformer 1", loading: "lazy"  %>
         </div>
         <div class="swiper-slide studio__slide">
-          <%= image_tag "machines-used.webp", alt: "Cours en session", class:"left", loading: "lazy"  %>
+          <%= image_tag "c-pilates-reformer-cours-sainte-foy-les-lyon.jpeg", alt: "Studio avec les Machines Reformer 2", loading: "lazy"  %>
         </div>
         <div class="swiper-slide studio__slide">
-          <%= image_tag "studio.webp", alt: "Cours en session", class:"left", loading: "lazy"  %>
+          <%= image_tag "c-pilates-reformer-remise-en-forme-corps-sainte-foy-les-lyon.jpeg", alt: "Rialto Reformer Machine 1", class:"left", loading: "lazy"  %>
+        </div>
+        <div class="swiper-slide studio__slide">
+          <%= image_tag "c-pilates-reformer-sainte-foy-les-lyon-rialto.jpeg", alt: "Rialto Reformer Machine 2", class:"left", loading: "lazy"  %>
         </div>
       </div>
 

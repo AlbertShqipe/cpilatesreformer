@@ -46,4 +46,6 @@ class PagesController < ApplicationController
       { author: 'Marco Merenda', rating: 5, text: "Très professionnelle et sympathique, je conseille fortement." }
     ]
   end
+  def faq
+  end
 end

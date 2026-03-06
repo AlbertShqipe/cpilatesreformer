@@ -5,6 +5,7 @@
     <div class="team__row">
       <div class="team__image">
         <%= image_tag "chiara_profile.jpeg", alt:"Chiara Paperini" %>
+        <a href="https://samadhi-lyon.fr/pilates#calendar" class="team__btn">Resérver un cours</a>
       </div>
       <div class="team__content">
         <h3 class="team__subtitle">Chiara Paperini</h3>
@@ -25,6 +26,7 @@
     <div class="team__row reverse">
       <div class="team__image">
         <%= image_tag "oksana.png", alt:"Oksana Boiko" %>
+        <a href="https://samadhi-lyon.fr/pilates#calendar" class="team__btn">Resérver un cours</a>
       </div>
       <div class="team__content">
         <h3 class="team__subtitle">Oksana Boiko</h3>
@@ -45,6 +47,7 @@
     <div class="team__row">
       <div class="team__image">
         <%= image_tag "astrid.png", alt:"Astrid Colomb-Bouvard" %>
+        <a href="https://samadhi-lyon.fr/pilates#calendar" class="team__btn">Resérver un cours</a>
       </div>
       <div class="team__content">
         <h3 class="team__subtitle">Astrid Colomb-Bouvard</h3>
@@ -75,12 +78,17 @@
         </li>
         <li class="partners__item">
           <%= link_to "https://inside-lyon.com/yoga-pilates-meilleurs-cours-studios#chiara-paperini,-des-cours-de-pilates-avec-une-danseuse-professionnelle", target: "_blank" do %>
-            <%= image_tag "inside_lyon.png", alt: "Inside Lyon" %>
+            <%= image_tag "inside_lyon.png", alt: "Inside Lyon Logo" %>
           <% end %>
         </li>
         <li class="partners__item">
           <%= link_to "https://enjoyeuse.com", target: "_blank" do %>
-            <%= image_tag "enjoyeuse-logo.png", alt: "Enjoyeuse" %>
+            <%= image_tag "enjoyeuse-logo.png", alt: "Enjoyeuse Logo" %>
+          <% end %>
+        </li>
+        <li class="partners__item">
+          <%= link_to "https://www.lyoncandoit.com/", target: "_blank" do %>
+            <%= image_tag "lyon-can-do-it.png", alt: "Lioncan Do It Logo", style: "max-height: 150px;" %>
           <% end %>
         </li>
       </ul>

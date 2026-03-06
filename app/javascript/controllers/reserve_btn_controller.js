@@ -62,8 +62,8 @@ export default class extends Controller {
     if (footer && reserveBtnMobile) {
       const footerObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          reserveBtnMobile.style.bottom = entry.isIntersecting ? "117px" : "20px";
-          reserveBtnDesktop.style.bottom = entry.isIntersecting ? "117px" : "50px";
+          reserveBtnMobile.style.bottom = entry.isIntersecting ? "144px" : "20px";
+          reserveBtnDesktop.style.bottom = entry.isIntersecting ? "144px" : "50px";
         });
       }, {
         root: null,

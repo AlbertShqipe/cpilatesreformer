@@ -8,31 +8,45 @@
     <ul class="navbar-nav d-flex align-items-center flex-row">
       <a class="navbar-menu-item p-3 bg-transparent w-lg-auto fs-14 d-inline-flex flex-column align-items-center text-decoration-none shadow-none text-black border-0" href="/">
         <li class="dropdown position-inherit">
-          Accueil
+          ACCUEIL
         </li>
       </a>
 
       <a class="navbar-menu-item p-3 bg-transparent w-lg-auto fs-14 d-inline-flex flex-column align-items-center text-decoration-none shadow-none text-black border-0" href="/pilates_reformer">
         <li class="dropdown position-inherit">
-          CPilates Reformer
+          PILATES REFORMER
         </li>
       </a>
 
       <a class="navbar-menu-item p-3 bg-transparent w-lg-auto fs-14 d-inline-flex flex-column align-items-center text-decoration-none shadow-none text-black border-0" href="/notre_equipe">
         <li class="dropdown position-inherit">
-          Notre Équipe
+          L’ÉQUIPE
         </li>
       </a>
       <a class="navbar-menu-item p-3 bg-transparent w-lg-auto fs-14 d-inline-flex flex-column align-items-center text-decoration-none shadow-none text-black border-0" href="/nos_cours">
         <li class="dropdown position-inherit">
-          Nos Cours
+          RÉSERVER UN COURS
         </li>
       </a>
-      <a class="navbar-menu-item p-3 bg-transparent w-lg-auto fs-14 d-inline-flex flex-column align-items-center text-decoration-none shadow-none text-black border-0" href="/nous_contacter">
-        <li class="dropdown position-inherit">
-          Nous Contacter
-        </li>
-      </a>
+      <div class="dropdown">
+        <a href="/nous_contacter" class="navbar-menu-item p-3 bg-transparent w-lg-auto fs-14 d-inline-flex align-items-center text-decoration-none shadow-none text-black border-0">
+          <span style="margin-right: 5px;">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink" height="10px" version="1.1" viewBox="0 0 16 16" width="10px">
+              <g fill="none" fill-rule="evenodd" id="Icons with numbers" stroke="none" stroke-width="1">
+                <g fill="currentColor" id="Group" transform="translate(-336.000000, -336.000000)">
+                  <path d="M344,339 L352,349 L336,349 L344,339 Z M344,339" id="Triangle 185 copy" transform="translate(344.000000, 344.000000) scale(1, -1) translate(-344.000000, -344.000000) "/>
+                </g>
+              </g>
+            </svg>
+          </span>
+          CONTACT
+        </a>
+        <a href="/faq" class="dropdown-content">
+          <span>
+            FAQ
+          </span>
+        </a>
+      </div>
     </ul>
 
     <div class="burger" data-action="click->navbar#toggle" data-navbar-target="burger">
@@ -46,11 +60,11 @@
         <a href="/" data-action="click->navbar#close">
           <%= image_tag 'slideshow.svg', width: "140px", alt:"logo CPilates" %>
         </a>
-        <a href="/">Accueil</a>
-        <a href="/pilates_reformer" data-action="click->navbar#close">CPilates Reformer</a>
-        <a href="/notre_equipe" data-action="click->navbar#close">Notre Équipe</a>
-        <a href="/nos_cours" data-action="click->navbar#close">Nos Cours</a>
-        <a href="/nous_contacter" data-action="click->navbar#close">Nous Contacter</a>
+        <a href="/">ACCUEIL</a>
+        <a href="/pilates_reformer" data-action="click->navbar#close">PILATES REFORMER</a>
+        <a href="/notre_equipe" data-action="click->navbar#close">L’ÉQUIPE</a>
+        <a href="/nos_cours" data-action="click->navbar#close">RÉSERVER UN COURS</a>
+        <a href="/nous_contacter" data-action="click->navbar#close">CONTACT</a>
         <div class="rights">
           <div>
             <p>&copy; <%= Time.current.year %> Chiara Paperini – Pilates Reformer</p>

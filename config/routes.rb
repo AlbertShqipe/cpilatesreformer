@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/nous_contacter', to: 'pages#nous_contacter'
   get '/nos_cours', to: 'pages#nos_cours'
   get '/pilates_reformer', to: 'pages#pilates_reformer'
+  get '/faq', to: 'pages#faq'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

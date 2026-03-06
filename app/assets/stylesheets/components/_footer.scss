@@ -26,4 +26,18 @@
       }
     }
   }
+  &__text_anartssoftware {
+    font-size: 0.75rem;
+    margin: 0.4rem 0;
+
+    a {
+      color: #93bdcc;
+      text-decoration: none;
+      transition: color 0.3s ease-in;
+
+      &:hover {
+        color: darken(#93bdcc, 10%);
+      }
+    }
+  }
 }

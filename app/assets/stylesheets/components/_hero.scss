@@ -1,5 +1,5 @@
 .hero {
-  height: 60dvh;
+  height: 52dvh;
   position: relative;
   display: flex;
   align-items: center;
@@ -64,11 +64,17 @@
     font-size: 2rem;
     margin-bottom: 3rem;
     color: white;
+
+    @media (max-width: 760px) {
+      font-size: 1.5rem;
+    }
   }
 
   &__btn {
+    display: inline-block;  // ← instead of block
+    width: fit-content;     // ← keeps it tight to content
+    white-space: nowrap;    // ← prevents text wrapping
     padding: 0.9rem 1.65rem;
-    // background-color: rgba(75, 54, 169, 0.9);
     background-color: #93bdcc;
     color: rgb(255, 255, 255);
     text-decoration: none;
@@ -76,18 +82,18 @@
     transition: background 0.3s ease;
     font-size: 1.8rem;
     font-family: $font-accent;
+    position: absolute;
+    bottom: 7.5%;
+    left: 50%;
+    transform: translateX(-50%);
 
     @media (max-width: 768px) {
       font-size: 1.5rem;
-      padding: 0.75rem 1.5rem;
-      margin-top: 1rem;
+      bottom: 20%;
     }
 
     &:hover {
-      // background-color: darken(#ffa60b, 10%);
       background-color: darken(#93bdcc, 10%);
-
-      // font-variation-settings: "wght" 650 !important;
     }
   }
 }

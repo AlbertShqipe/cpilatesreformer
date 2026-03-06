@@ -9,13 +9,22 @@ nav {
 }
 
 .navbar-menu-item {
+  color: #333;
+
   @media (max-width: 768px) {
     display: none !important;
   }
 
+  span {
+    margin-right: 5px;
+
+    svg {
+      fill: currentColor;
+    }
+  }
+
   &:hover {
     background-color: rgba(25, 29, 58, 0.05) !important;
-    // color: #4c36a9 !important;
     color: #93bdcc !important;
     border-radius: 4px;
     font-variation-settings: "wght" 550 !important;
