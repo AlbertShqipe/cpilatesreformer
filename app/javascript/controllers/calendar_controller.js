@@ -42,7 +42,7 @@ export default class extends Controller {
         const image = info.event.extendedProps.image || 'default.jpg';
         const level = info.event.extendedProps.level;
         const title = 'Cours collectif';
-        const link = `https://samadhi-lyon.fr/pilates#calendar`;
+        const link = `https://www.eversports.fr/org/widget/overview?companyId=659faeaa-0fe1-4fdc-bc8e-caa5a74a57e5`;
 
         popupText.innerHTML = `
           <div class="text-center" style="margin: auto; padding: 20px; background: rgb(241, 241, 241); border-radius: 12px;">
