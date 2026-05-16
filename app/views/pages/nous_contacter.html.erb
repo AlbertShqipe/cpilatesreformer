@@ -2,31 +2,32 @@
   <div class="contact__container">
     <h2 class="contact__title">Contactez Nous</h2>
 
+    <div class="contact__content" data-eversports-widget-id="2a5f0717-e38b-42fa-9387-b93749222388"><!--N'incluez le script qu'une seule fois par page.--></div>
     <div class="contact__content">
-      <div class="contact__form">
-        <%= form_with url: contact_path, method: :post, local: true do |f| %>
+      <%# <div class="contact__form"> %>
+        <% form_with url: contact_path, method: :post, local: true do |f| %>
           <div class="contact__field">
-            <%= f.label :name, 'Votre nom' %>
-            <%= f.text_field :name, required: true %>
+            <% f.label :name, 'Votre nom' %>
+            <% f.text_field :name, required: true %>
           </div>
 
           <div class="contact__field">
-            <%= f.label :email, 'Votre email' %>
-            <%= f.email_field :email, required: true %>
+            <% f.label :email, 'Votre email' %>
+            <% f.email_field :email, required: true %>
           </div>
 
           <div class="contact__field">
-            <%= f.label :message, 'Votre message' %>
-            <%= f.text_area :message, rows: 5, required: true %>
+            <% f.label :message, 'Votre message' %>
+            <% f.text_area :message, rows: 5, required: true %>
           </div>
 
           <div class="contact__field">
-            <%= f.submit 'Envoyer', class: 'contact__btn' %>
+            <% f.submit 'Envoyer', class: 'contact__btn' %>
           </div>
         <% end %>
-      </div>
+      <%# </div> %>
 
-      <div class="contact__info">
+      <div class="contact__info mt-4">
         <p><strong>📞</strong> <a href="tel:+33745147577">0745147577</a></p>
         <p><strong>📧</strong> <a href="mailto:contact@cpilatesreformer.com">contact@cpilatesreformer.com</a></p>
       </div>
@@ -40,3 +41,5 @@
   <% content_for :uses_map, true  %>
   <div id="map" class="mt-5"></div>
 </section>
+
+<script type="module" src="https://widget-static.eversports.io/loader.js" async defer></script>
