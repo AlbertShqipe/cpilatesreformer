@@ -40,6 +40,9 @@
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
 
+    <%# Custom head content, for eversports widget %>
+    <%= yield :head %>
+
     <!-- App JS via Importmap -->
     <%= javascript_importmap_tags %>
 

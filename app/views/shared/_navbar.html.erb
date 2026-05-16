@@ -18,7 +18,7 @@
         </li>
       </a>
 
-      <a class="navbar-menu-item p-3 bg-transparent w-lg-auto fs-14 d-inline-flex flex-column align-items-center text-decoration-none shadow-none text-black border-0" href="/nos_cours">
+      <a class="navbar-menu-item p-3 bg-transparent w-lg-auto fs-14 d-inline-flex flex-column align-items-center text-decoration-none shadow-none text-black border-0" href="/nos_cours" data-turbo="false">
         <li class="dropdown position-inherit">
           RÉSERVER UN COURS
         </li>
@@ -29,8 +29,9 @@
           L’ÉQUIPE
         </li>
       </a>
+
       <div class="dropdown">
-        <a href="/nous_contacter" class="navbar-menu-item p-3 bg-transparent w-lg-auto fs-14 d-inline-flex align-items-center text-decoration-none shadow-none text-black border-0">
+        <a href="/nous_contacter" class="navbar-menu-item p-3 bg-transparent w-lg-auto fs-14 d-inline-flex align-items-center text-decoration-none shadow-none text-black border-0" data-turbo="false">
           <span style="margin-right: 5px;">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink" height="10px" version="1.1" viewBox="0 0 16 16" width="10px">
               <g fill="none" fill-rule="evenodd" id="Icons with numbers" stroke="none" stroke-width="1">
@@ -42,6 +43,7 @@
           </span>
           CONTACT
         </a>
+
         <a href="/faq" class="dropdown-content">
           <span>
             FAQ
@@ -64,8 +66,8 @@
         <a href="/">ACCUEIL</a>
         <a href="/pilates_reformer" data-action="click->navbar#close">PILATES REFORMER</a>
         <a href="/notre_equipe" data-action="click->navbar#close">L’ÉQUIPE</a>
-        <a href="/nos_cours" data-action="click->navbar#close">RÉSERVER UN COURS</a>
-        <a href="/nous_contacter" data-action="click->navbar#close">CONTACT</a>
+        <a href="/nos_cours" data-turbo="false" data-action="click->navbar#close">RÉSERVER UN COURS</a>
+        <a href="/nous_contacter" data-turbo="false" data-action="click->navbar#close">CONTACT</a>
         <div class="rights">
           <div>
             <p>&copy; <%= Time.current.year %> Chiara Paperini – Pilates Reformer</p>
