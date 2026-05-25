@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/notre_equipe', to: 'pages#notre_equipe'
   get '/nous_contacter', to: 'pages#nous_contacter'
   get '/nos_cours', to: 'pages#nos_cours'
+  get '/tarifs', to: 'pages#tarifs'
   get '/pilates_reformer', to: 'pages#pilates_reformer'
   get '/faq', to: 'pages#faq'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

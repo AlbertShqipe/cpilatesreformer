@@ -48,4 +48,7 @@ class PagesController < ApplicationController
   end
   def faq
   end
+
+  def tarifs
+  end
 end
