@@ -5,12 +5,21 @@ Rails.application.configure do
 
   # Maindrill configuration
   config.action_mailer.default_url_options = { host: 'www.cpilatesreformer.com' }
+  # config.action_mailer.smtp_settings = {
+  #   address: 'smtp.mandrillapp.com',
+  #   port: 587,
+  #   user_name: 'AlbertNikolliWeb', # Replace with your Mandrill username
+  #   password: ENV['MAILCHIMP_API_TOKEN'], # Replace with your Mandrill API key
+  #   authentication: 'plain',
+  #   enable_starttls_auto: true
+  # }
+
   config.action_mailer.smtp_settings = {
-    address: 'smtp.mandrillapp.com',
+    address: 'smtp-relay.brevo.com',
     port: 587,
-    user_name: 'AlbertNikolliWeb', # Replace with your Mandrill username
-    password: ENV['MAILCHIMP_API_TOKEN'], # Replace with your Mandrill API key
-    authentication: 'plain',
+    user_name: ENV['BREVO_SMTP_LOGIN'], # Replace with your Mandrill username
+    password: ENV['BREVO_SMTP_KEY'], # Replace with your Mandrill API key
+    authentication: 'login',
     enable_starttls_auto: true
   }
 
